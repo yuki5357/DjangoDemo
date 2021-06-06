@@ -25,7 +25,7 @@ class Record(View):
 
     @staticmethod
     def check_author(author):
-        if author.get('name', ''):
+        if author.get('name', '') and Author.objects.filter(name=author['name']):
             return True
         return False
 
